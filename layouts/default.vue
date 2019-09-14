@@ -1,8 +1,19 @@
 <template>
   <div>
+    <app-top-bar />
     <nuxt />
   </div>
 </template>
+
+<script>
+import AppTopBar from '~/components/AppTopBar'
+
+export default {
+  components: {
+    AppTopBar
+  }
+}
+</script>
 
 <style>
 html {
