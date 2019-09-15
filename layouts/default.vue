@@ -16,6 +16,10 @@ export default {
 </script>
 
 <style>
+:root {
+  --appBackground: #f1f1f1;
+}
+
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -26,6 +30,10 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+}
+
+body {
+  background-color: var(--appBackground);
 }
 
 *,
