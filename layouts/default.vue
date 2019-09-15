@@ -1,7 +1,9 @@
 <template>
   <div>
     <app-top-bar />
-    <nuxt />
+    <main>
+      <nuxt />
+    </main>
   </div>
 </template>
 
@@ -37,6 +39,10 @@ html {
 
 body {
   background-color: var(--appBackground);
+}
+
+main {
+  margin-top: 80px;
 }
 
 *,

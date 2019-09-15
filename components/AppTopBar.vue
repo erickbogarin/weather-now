@@ -10,6 +10,9 @@ export default {}
 
 <style lang="scss" scope>
 .topBar {
+  position: fixed;
+  top: 0;
+  z-index: 5;
   margin: 0 auto;
   width: 100%;
   padding: 0.8rem 0;

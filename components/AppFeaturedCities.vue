@@ -1,13 +1,8 @@
 <template>
   <div>
-    <app-current-weather
-      :name="city.name"
-      :country="city.sys.country"
-      :temp="city.main.temp"
-      :pressure="city.main.pressure"
-      :humidity="city.main.humidity"
-      updated-at="asds"
-    />
+    <app-current-weather :city-id="nuuk" />
+    <app-current-weather :city-id="urubici" />
+    <app-current-weather :city-id="nairobi" />
   </div>
 </template>
 
@@ -18,9 +13,11 @@ export default {
   components: {
     AppCurrentWeather
   },
-  computed: {
-    city() {
-      return this.$store.getters.city
+  data() {
+    return {
+      nuuk: 3421319,
+      urubici: 3445709,
+      nairobi: 184745
     }
   }
 }

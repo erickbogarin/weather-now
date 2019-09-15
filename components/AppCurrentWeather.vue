@@ -1,20 +1,19 @@
 <template>
-  <div>
-    <app-card>
-      <template v-slot:card-header>
-        <h3>{{ name }}, {{ country }}</h3>
-      </template>
-      <span :class="['weather__temp', `weather__temp--${tempCondition}`]">
-        {{ Math.floor(temp) }}
-      </span>
-      <template v-slot:card-footer>
-        <span class="weather__time">{{ updatedAt }}</span>
-      </template>
-    </app-card>
-  </div>
+  <app-card v-if="city">
+    <template v-slot:card-header>
+      <h3>{{ city.name }}, {{ city.sys.country }}</h3>
+    </template>
+    <span :class="['weather__temp', `weather__temp--${tempCondition}`]">{{
+      Math.floor(city.main.temp)
+    }}</span>
+    <template v-slot:card-footer>
+      <span class="weather__time">asd</span>
+    </template>
+  </app-card>
 </template>
 
 <script>
+import axios from '~/plugins/axios'
 import AppCard from '~/components/AppCard'
 
 export default {
@@ -22,35 +21,23 @@ export default {
     AppCard
   },
   props: {
-    name: {
-      type: String,
-      required: true
-    },
-    country: {
-      type: String,
-      required: true
-    },
-    temp: {
-      required: true,
-      type: Number
-    },
-    pressure: {
+    cityId: {
       type: Number,
-      default: 0
-    },
-    humidity: {
-      type: Number,
-      default: 0
-    },
-    updatedAt: {
-      required: true,
-      type: String
+      required: true
     }
   },
   data: () => {
     return {
-      tempCondition: 'blue'
+      tempCondition: 'blue',
+      city: null
     }
+  },
+  async mounted() {
+    /* eslint-disable-next-line */
+    const { data } = await axios.get(
+      `weather?id=${this.cityId}&appid=${process.env.APP_ID}&units=metric`
+    )
+    this.city = data
   }
 }
 </script>

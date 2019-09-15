@@ -56,5 +56,9 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
+  },
+  env: {
+    BASE_URL: 'http://api.openweathermap.org/data/2.5',
+    APP_ID: '62035083139661fa98de9796eebda31d'
   }
 }
