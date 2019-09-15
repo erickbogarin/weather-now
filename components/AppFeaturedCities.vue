@@ -1,8 +1,10 @@
 <template>
-  <div>
-    <app-current-weather :city-id="nuuk" />
-    <app-current-weather :city-id="urubici" />
-    <app-current-weather :city-id="nairobi" />
+  <div class="wrapper">
+    <div class="featured-cities">
+      <app-current-weather :city-id="nuuk" />
+      <app-current-weather :featured="true" :city-id="urubici" />
+      <app-current-weather :city-id="nairobi" />
+    </div>
   </div>
 </template>
 
@@ -22,3 +24,25 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+@media (min-width: 900px) {
+  .wrapper {
+    display: flex;
+    align-items: flex-end;
+    min-height: calc(100vh - 170px);
+  }
+}
+.featured-cities {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 900px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    width: 100%;
+  }
+}
+</style>

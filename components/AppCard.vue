@@ -19,23 +19,19 @@
   border-radius: 5px;
   text-align: center;
 
-  width: 85%;
-  margin: 0 auto;
-  margin-top: 30px;
-
   &--header {
-    padding: 1rem 0;
+    padding: 0.75rem 0;
     border-bottom: 1px solid #ebebeb;
     color: #737c84;
   }
 
   &--body {
-    padding: 1.75rem 0;
+    padding: 1.2rem 0;
   }
 
   &--footer {
     background-color: rgba(#f1f1f1, 0.5);
-    padding: 1.25rem 0;
+    padding: 1rem 0;
   }
 }
 </style>
