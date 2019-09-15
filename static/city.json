@@ -1,0 +1,46 @@
+{
+    "coord": {
+        "lon": -49.59,
+        "lat": -28.02
+    },
+    "weather": [
+        {
+            "id": 500,
+            "main": "Rain",
+            "description": "light rain",
+            "icon": "10n"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 12.22,
+        "pressure": 1026,
+        "humidity": 97,
+        "temp_min": 12.22,
+        "temp_max": 12.22
+    },
+    "wind": {
+        "speed": 2.68,
+        "deg": 33,
+        "gust": 5.36
+    },
+    "rain": {
+        "3h": 0.75
+    },
+    "clouds": {
+        "all": 83
+    },
+    "dt": 1568509214,
+    "sys": {
+        "type": 3,
+        "id": 265471,
+        "message": 0.0078,
+        "country": "BR",
+        "sunrise": 1568452667,
+        "sunset": 1568495432
+    },
+    "timezone": -10800,
+    "id": 3445709,
+    "name": "Urubici",
+    "cod": 200
+}

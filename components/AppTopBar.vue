@@ -18,7 +18,7 @@ export default {}
 
   &--logo {
     width: 100%;
-    height: 25px;
+    height: 30px;
   }
 }
 </style>

@@ -1,11 +1,15 @@
 <template>
   <div>
-    <h1>works</h1>
+    <app-featured-cities />
   </div>
 </template>
 
 <script>
+import AppFeaturedCities from '~/components/AppFeaturedCities'
+
 export default {
-  components: {}
+  components: {
+    AppFeaturedCities
+  }
 }
 </script>

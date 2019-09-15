@@ -18,6 +18,9 @@ export default {
 <style>
 :root {
   --appBackground: #f1f1f1;
+  --orange: #ff9632;
+  --red: #ed1946;
+  --blue: #69a3ff;
 }
 
 html {
