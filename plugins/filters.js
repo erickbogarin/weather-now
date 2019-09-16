@@ -1,5 +1,9 @@
 import Vue from 'vue'
 
+function roundDown(val) {
+  return Math.floor(val)
+}
+
 function time(val, locale = 'default') {
   const options = {
     hour: 'numeric',
@@ -11,3 +15,6 @@ function time(val, locale = 'default') {
 }
 
 Vue.filter('time', time)
+Vue.filter('roundDown', roundDown)
+
+export { roundDown, time }

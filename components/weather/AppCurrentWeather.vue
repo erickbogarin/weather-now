@@ -9,6 +9,7 @@
         <app-error-message class="weather-error__message">
           Something went wrong
         </app-error-message>
+
         <app-button class="weather-error__button" @click.native="loadCity"
           >Try Again</app-button
         >
@@ -19,13 +20,15 @@
       <template v-slot:header>
         <h3 class="weather__title">{{ city.name }}, {{ city.sys.country }}</h3>
       </template>
+
       <span
         :class="[
           'weather__temp',
           `weather__temp--${condition(city.main.temp)}`
         ]"
-        >{{ Math.floor(city.main.temp) }}</span
+        >{{ city.main.temp | roundDown }}</span
       >
+
       <template v-slot:footer>
         <div v-if="featured">
           <div class="weather-featured">
@@ -36,6 +39,7 @@
               }}</span>
               <span class="weather-featured__type">%</span>
             </div>
+
             <div class="weather-featured__info">
               <h5 class="weather-featured__title">Pressure</h5>
               <span class="weather-featured__description">{{
