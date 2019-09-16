@@ -55,7 +55,7 @@
 import { interval } from 'rxjs'
 
 import { REFRESH_TIME_MILLIS } from '~/constants'
-import { weatherByCity } from '~/services/openWeatherMapService'
+import { weatherByCity } from '~/functions/weather'
 import AppCard from '~/components/AppCard'
 import AppErrorMessage from '~/components/AppErrorMessage'
 import AppButton from '~/components/AppButton'
