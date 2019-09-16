@@ -1,4 +1,4 @@
-import { REFRESH_TIME_MILLIS } from '~/constants'
+import { REFRESH_TIME_MILLIS } from './constants'
 
 export default {
   mode: 'spa',
