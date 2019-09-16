@@ -15,7 +15,7 @@
       </div>
     </app-card>
 
-    <app-card v-if="city">
+    <app-card v-if="!isLoading && city">
       <template v-slot:header>
         <h3 class="weather__title">{{ city.name }}, {{ city.sys.country }}</h3>
       </template>
@@ -52,6 +52,9 @@
 </template>
 
 <script>
+import { interval } from 'rxjs'
+
+import { REFRESH_TIME_MILLIS } from '~/constants'
 import { weatherByCity } from '~/services/openWeatherMapService'
 import AppCard from '~/components/AppCard'
 import AppErrorMessage from '~/components/AppErrorMessage'
@@ -84,6 +87,10 @@ export default {
   },
   mounted() {
     this.loadCity()
+
+    this.$subscribeTo(interval(REFRESH_TIME_MILLIS), (count) => {
+      this.loadCity()
+    })
   },
   methods: {
     async loadCity() {

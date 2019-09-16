@@ -21,9 +21,12 @@
     }
   },
   "dependencies": {
-    "nuxt": "^2.0.0",
     "@nuxtjs/axios": "^5.3.6",
-    "@nuxtjs/pwa": "^3.0.0-0"
+    "@nuxtjs/pwa": "^3.0.0-0",
+    "nuxt": "^2.0.0",
+    "rxjs": "^6.5.3",
+    "vue": "^2.6.10",
+    "vue-rx": "^6.2.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.0.1",

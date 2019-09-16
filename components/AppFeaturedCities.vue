@@ -17,7 +17,7 @@ export default {
   },
   data() {
     return {
-      nuuk: 123,
+      nuuk: 3421319,
       urubici: 3445709,
       nairobi: 184745
     }
