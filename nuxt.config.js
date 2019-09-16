@@ -1,5 +1,10 @@
+import { REFRESH_TIME_MILLIS } from '~/constants'
+
 export default {
   mode: 'spa',
+  generate: {
+    fallback: true
+  },
   /*
    ** Headers of the page
    */
@@ -54,7 +59,24 @@ export default {
     extend(config, ctx) {}
   },
   env: {
-    BASE_URL: 'http://api.openweathermap.org/data/2.5',
+    BASE_URL: 'https://api.openweathermap.org/data/2.5',
     APP_ID: '62035083139661fa98de9796eebda31d'
+  },
+  pwa: {
+    workbox: {
+      runtimeCaching: [
+        {
+          urlPattern: 'https://api.openweathermap.org/data/2.5/.*',
+          handler: 'staleWhileRevalidate',
+          strategyOptions: {
+            cacheName: 'openweather-cache',
+            cacheExpiration: {
+              maxEntries: 10,
+              maxAgeSeconds: REFRESH_TIME_MILLIS
+            }
+          }
+        }
+      ]
+    }
   }
 }
