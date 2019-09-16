@@ -1,13 +1,32 @@
 <template>
   <div class="weather">
+    <app-card v-if="isLoading">
+      <img src="~/assets/loader.svg" alt="Loading" />
+    </app-card>
+
+    <app-card v-else-if="error">
+      <div class="weather-error">
+        <app-error-message class="weather-error__message">
+          Something went wrong
+        </app-error-message>
+        <app-button class="weather-error__button" @click.native="loadCity"
+          >Try Again</app-button
+        >
+      </div>
+    </app-card>
+
     <app-card v-if="city">
-      <template v-slot:card-header>
+      <template v-slot:header>
         <h3 class="weather__title">{{ city.name }}, {{ city.sys.country }}</h3>
       </template>
-      <span :class="['weather__temp', `weather__temp--${tempCondition}`]">{{
-        Math.floor(city.main.temp)
-      }}</span>
-      <template v-slot:card-footer>
+      <span
+        :class="[
+          'weather__temp',
+          `weather__temp--${condition(city.main.temp)}`
+        ]"
+        >{{ Math.floor(city.main.temp) }}</span
+      >
+      <template v-slot:footer>
         <div v-if="featured">
           <div class="weather-featured">
             <div class="weather-featured__info">
@@ -33,13 +52,19 @@
 </template>
 
 <script>
-import axios from '~/plugins/axios'
+import { weatherByCity } from '~/services/openWeatherMapService'
 import AppCard from '~/components/AppCard'
+import AppErrorMessage from '~/components/AppErrorMessage'
+import AppButton from '~/components/AppButton'
+import { weatherConditionMixin } from '~/mixins/weatherConditionMixin'
 
 export default {
   components: {
-    AppCard
+    AppCard,
+    AppErrorMessage,
+    AppButton
   },
+  mixins: [weatherConditionMixin],
   props: {
     cityId: {
       type: Number,
@@ -47,21 +72,30 @@ export default {
     },
     featured: {
       type: Boolean,
-      required: true
+      default: false
     }
   },
   data: () => {
     return {
-      tempCondition: 'blue',
+      isLoading: false,
+      error: false,
       city: null
     }
   },
-  async mounted() {
-    /* eslint-disable-next-line */
-    const { data } = await axios.get(
-      `weather?id=${this.cityId}&appid=${process.env.APP_ID}&units=metric`
-    )
-    this.city = data
+  mounted() {
+    this.loadCity()
+  },
+  methods: {
+    async loadCity() {
+      this.isLoading = true
+      try {
+        const { data } = await weatherByCity(this.$props.cityId)
+        this.city = data
+      } catch (e) {
+        this.error = true
+      }
+      this.isLoading = false
+    }
   }
 }
 </script>
@@ -89,15 +123,15 @@ export default {
     font-size: 6.5rem;
   }
 
-  &__temp--red {
+  &__temp--hot {
     color: var(--red);
   }
 
-  &__temp--orange {
+  &__temp--chilly {
     color: var(--orange);
   }
 
-  &__temp--blue {
+  &__temp--cold {
     color: var(--blue);
   }
 
@@ -142,6 +176,13 @@ export default {
 
   &__type {
     font-size: 0.8rem;
+  }
+}
+
+.weather-error {
+  padding: 30px 0;
+  &__message {
+    margin-bottom: 1rem;
   }
 }
 </style>
