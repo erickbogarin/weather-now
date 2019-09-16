@@ -86,7 +86,7 @@ export default {
       default: false
     }
   },
-  data: () => {
+  data() {
     return {
       isLoading: false,
       error: false,
