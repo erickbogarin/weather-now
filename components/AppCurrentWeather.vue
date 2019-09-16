@@ -1,7 +1,7 @@
 <template>
   <div class="weather">
     <app-card v-if="isLoading">
-      <img src="~/assets/loader.svg" alt="Loading" />
+      <app-loader />
     </app-card>
 
     <app-card v-else-if="error">
@@ -61,13 +61,15 @@ import { weatherByCity } from '~/functions/weather'
 import AppCard from '~/components/AppCard'
 import AppErrorMessage from '~/components/AppErrorMessage'
 import AppButton from '~/components/AppButton'
+import AppLoader from '~/components/AppLoader'
 import { weatherConditionMixin } from '~/mixins/weatherConditionMixin'
 
 export default {
   components: {
     AppCard,
     AppErrorMessage,
-    AppButton
+    AppButton,
+    AppLoader
   },
   mixins: [weatherConditionMixin],
   props: {
