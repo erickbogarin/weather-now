@@ -45,7 +45,9 @@
             </div>
           </div>
         </div>
-        <span class="weather__time">Updated at 12:33:44 PM</span>
+        <span class="weather__time"
+          >Updated at {{ city.updatedAt | time('en-US') }}</span
+        >
       </template>
     </app-card>
   </div>

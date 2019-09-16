@@ -27,7 +27,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/vue-rxjs.js'],
+  plugins: ['~/plugins/vue-rxjs.js', '~/plugins/filters.js'],
   /*
    ** Nuxt.js dev-modules
    */
