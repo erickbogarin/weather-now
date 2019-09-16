@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import AppCurrentWeather from '~/components/AppCurrentWeather'
+import AppCurrentWeather from './AppCurrentWeather'
 
 export default {
   components: {

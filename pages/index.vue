@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import AppFeaturedCities from '~/components/AppFeaturedCities'
+import AppFeaturedCities from '~/components/weather/AppFeaturedCities'
 
 export default {
   components: {

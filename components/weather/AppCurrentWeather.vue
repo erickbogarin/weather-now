@@ -58,10 +58,10 @@ import { interval } from 'rxjs'
 
 import { REFRESH_TIME_MILLIS } from '~/constants'
 import { weatherByCity } from '~/functions/weather'
-import AppCard from '~/components/AppCard'
-import AppErrorMessage from '~/components/AppErrorMessage'
-import AppButton from '~/components/AppButton'
-import AppLoader from '~/components/AppLoader'
+import AppCard from '~/components/ui/AppCard'
+import AppErrorMessage from '~/components/ui/AppErrorMessage'
+import AppButton from '~/components/ui/AppButton'
+import AppLoader from '~/components/ui/AppLoader'
 import { weatherConditionMixin } from '~/mixins/weatherConditionMixin'
 
 export default {

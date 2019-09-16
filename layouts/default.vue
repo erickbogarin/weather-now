@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import AppTopBar from '~/components/AppTopBar'
+import AppTopBar from '~/components/header/AppTopBar'
 
 export default {
   components: {
