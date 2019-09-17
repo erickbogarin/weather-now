@@ -1,10 +1,8 @@
-import configure from '~/plugins/axios'
+import axios from '~/plugins/axios'
 
 async function weatherByCity(cityID) {
-  const api = await configure()
-
   try {
-    const response = await api.get(
+    const response = await axios.get(
       `weather?id=${cityID}&appid=${process.env.APP_ID}&units=metric`
     )
 
