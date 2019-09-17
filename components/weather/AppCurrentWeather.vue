@@ -158,7 +158,7 @@ export default {
   }
 
   &__time {
-    color: #b4b4b4;
+    color: var(--gray);
     font-size: 0.8rem;
   }
 }
@@ -174,7 +174,7 @@ export default {
 
   &__title {
     text-transform: uppercase;
-    color: #b4b4b4;
+    color: var(--gray);
     font-weight: 500;
     font-size: 0.8rem;
     margin-bottom: 3px;
@@ -182,7 +182,7 @@ export default {
 
   &__description,
   &__type {
-    color: #737c84;
+    color: var(--darkGray);
   }
 
   &__description {

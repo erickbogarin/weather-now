@@ -22,7 +22,7 @@
   &--header {
     padding: 0.75rem 0;
     border-bottom: 1px solid #ebebeb;
-    color: #737c84;
+    color: var(--darkGray);
   }
 
   &--body {

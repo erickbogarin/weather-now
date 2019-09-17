@@ -7,8 +7,8 @@
 <style lang="scss" scoped>
 .button {
   background: transparent;
-  border: 2px solid #737c84;
-  color: #737c84;
+  border: 2px solid var(--darkGray);
+  color: var(--darkGray);
   border-radius: 20px;
   padding: 12px 20px;
 }
