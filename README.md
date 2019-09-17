@@ -60,6 +60,7 @@ Check netlify guide to depoly this app from [here](https://www.netlify.com/blog/
 - [Sass](https://sass-lang.com/) - CSS preprocessor
 - [jest](https://jestjs.io/) - JavaScript Testing Framework
 - [axios](https://github.com/axios/axios) - Promise based HTTP client
+- [Docker](https://www.docker.com/) - container platform
 
 ## Improvement opportunities
 
