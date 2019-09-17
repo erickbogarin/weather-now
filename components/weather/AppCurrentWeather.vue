@@ -61,7 +61,7 @@
 import { interval } from 'rxjs'
 
 import { REFRESH_TIME_MILLIS } from '~/constants'
-import { weatherByCity } from '~/functions/weather'
+import { weatherByCity } from '~/services/weather'
 import AppCard from '~/components/ui/AppCard'
 import AppErrorMessage from '~/components/ui/AppErrorMessage'
 import AppButton from '~/components/ui/AppButton'
